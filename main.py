@@ -73,7 +73,7 @@ inout = [
                 ]
 
 while True:
-    encOrDec = input("Do you want to encode or decode (e/d) ")
+    encOrDec = input("Do you want to encode or decode (e/d/exit) ")
     encoded = ''
     decoded = ''
     if encOrDec == "e":
@@ -91,3 +91,6 @@ while True:
         for letter in text:
             decoded = decoded + inout[[f_inout[1] for f_inout in inout].index(letter)][0]
         print(decoded)
+    
+    elif encOrDec == "exit":
+        exit()
