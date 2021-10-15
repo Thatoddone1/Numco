@@ -9,7 +9,7 @@ def decode(text):
     decoded = ""
     for letter in text:
         decoded = decoded + inout[[f_inout[1] for f_inout in inout].index(letter)][0]
-        return decoded
+    return decoded
 
 def encode(text):
     encoded = ""
@@ -118,8 +118,6 @@ if conorgui == "gui":
             self.Encode.pack(side='top')
             self.entry1 = ttk.Entry(self.labelframe1)
             self.encodetext = tk.StringVar(value='Text here')
-            self.encodetext = tk.StringVar(value= "Text here")
-            self.entry1.configure(textvariable=self.encodetext)
             _text_ = '''Text here'''
             self.entry1.delete('0', 'end')
             self.entry1.insert('0', _text_)
@@ -135,9 +133,6 @@ if conorgui == "gui":
             self.label3.configure(text='Decode')
             self.label3.pack(side='top')
             self.entry3 = ttk.Entry(self.labelframe1)
-            self.decodetext = tk.StringVar(value='Encoded text here')
-            self.decodetext = tk.StringVar(value= "Encoded text here")
-            self.entry3.configure(textvariable=self.decodetext)
             _text_ = '''Encoded text here'''
             self.entry3.delete('0', 'end')
             self.entry3.insert('0', _text_)
@@ -167,7 +162,7 @@ if conorgui == "gui":
             print(encoded)
 
         def decodebut(self):
-            output = str(self.decodetext)
+            output = str(self.entry3.get())
             decoded = decode(output)
             self.message1.configure(text=decoded)
             self.message1.pack(pady='100', side='top')
